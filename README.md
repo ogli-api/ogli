@@ -25,6 +25,7 @@
 <!-- TABLE OF CONTENTS -->
 ## Table of Content
 
+* [TL;DR](#tl-dr)
 * [What is Ogli?](#what-is-Ogli)
 * [Getting Started](#getting-started) 
   * [Installation](#installation)
@@ -39,7 +40,7 @@
 * [Building a Custom Component](#building-a-custom-component)
 * [FAQ](#faq)
 
-## TL:DR 
+## :zap: TL;DR 
 
 > :star: Ogli is a Simple, Serverless, Integration and API creation tool and framework.
 
