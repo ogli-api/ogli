@@ -22,9 +22,10 @@
   </p>
 </p>
 
-<!-- TABLE OF CONTENTS -->
-## Table of Content
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
+<!-- TABLE OF CONTENTS -->
+## 🚩 Table of Content
 * [TL;DR](#zzz-tldr)
 * [What is Ogli?](#bowtie-what-is-ogli)
 * [Getting Started](#rocket-getting-started) 
