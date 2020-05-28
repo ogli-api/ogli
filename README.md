@@ -25,20 +25,23 @@
 <!-- TABLE OF CONTENTS -->
 ## Table of Content
 
-* [TL;DR](#tl-dr)
-* [What is Ogli?](#what-is-Ogli)
-* [Getting Started](#getting-started) 
+* [TL;DR](#zzz-tldr)
+* [What is Ogli?](#bowtie-what-is-ogli)
+* [Getting Started](#rocket-getting-started) 
   * [Installation](#installation)
     * [Ogli](#ogli)
-  * [Usage](#usage)
+  * [Usage](#ballot_box_with_check-usage)
     * [Creating your first project](#creating-your-first-project)
     * [Command Line Interface (CLI)](#command-line-interface)
     * [How to create an API](#how-to-create-an-api)
     * [How to create a Flow](#how-to-create-a-flow)
   * [Testing and Debugging](#testing-and-debugging)
-* [Connectors](#connectors)
-* [Building a Custom Component](#building-a-custom-component)
+* [Connectors](#electric_plug-connectors)
+* [Building a Custom Component](#coffee-building-a-custom-component)
 * [FAQ](#faq)
+* [Contributing](#busts_in_silhouette-contributing)
+* [License](#blue_book-license)
+* [Contact](#postbox-contact)
 
 ## :zzz: TL;DR 
 
