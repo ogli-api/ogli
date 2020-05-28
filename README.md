@@ -40,18 +40,18 @@
 * [Building a Custom Component](#building-a-custom-component)
 * [FAQ](#faq)
 
-## :zap: TL;DR 
+## :zzz: TL;DR 
 
-> :star: Ogli is a Simple, Serverless, Integration and API creation tool and framework.
+> Ogli is a Simple, Serverless, Integration and API creation tool and framework.
 
-## What is Ogli?
+## :bowtie: What is Ogli?
 
 The Ogli command line interface (CLI) is used to create serverless application integration projects and APIs that run 
 in the cloud on Amazon's AWS platform. Ogli is a "deploy first" framework. Instead of deployment being the last thing 
 you do, with Ogli it is the first thing you do. Deployment is something you are always doing, so it should be as natural 
 as possible (not something to be feared).
 
-## Getting Started
+## :rocket: Getting Started
 
 ### Installation
 
@@ -111,11 +111,11 @@ directly in your machine or better, in a python virtual environment. You can cre
 
 3. **Configure aws-ogli:** `$ ogli configure-aws`
 
-> NOTE: If you don't want to install Ogli on your computer/laptop, then you can install it on an online account at 
+> :warning: If you don't want to install Ogli on your computer/laptop, then you can install it on an online account at 
 > [Python Anywhere](https://www.pythonanywhere.com/)
 
  
-### Usage
+### :ballot_box_with_check: Usage
 
 #### Creating your first project
 TODO
@@ -142,7 +142,7 @@ TODO
 ### Testing and Debugging 
 TODO
 
-## Connectors
+## :electric_plug: Connectors
 * **Slack:** Post body of message to slack and post exceptions to slack
 * **Dynamodb:** Put data into and get data from a Dynamodb table
 * **Delimited Reader:** The delimited_reader will read in a flat file that is delimited by a single character
@@ -153,10 +153,10 @@ TODO
 * **Http Post:** Post the body of the message to an http resource
 * **Jdbc:** There are currently two jdbc components: jdbc_insert and jdbc_select
 
-## Building a Custom Component
+## :coffee: Building a Custom Component
 TODO
 
-## FAQ
+## :question: FAQ
 * How do you pronounce Ogli?
     > Ogli is pronounced: oh-glee
                                
@@ -167,11 +167,11 @@ TODO
 
     > * If it is not possible to do what you want with an Ogli custom component, then you could create your own Lambda that does what you need and then integrate your flows with that Lambda.
 
-## Contributing
+## :busts_in_silhouette: Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-## License
+## :blue_book: License
 TODO
 
-## Contact
+## :postbox: Contact
 TODO
