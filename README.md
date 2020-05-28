@@ -96,8 +96,8 @@ AWS CLI.
     ```
 
 #### Ogli
-1. **Create a virtual environment (recommended):** `Ogli` is distributed as a python package, so you can installed directly in your machine or better, in a python virtual 
-environment. You can create your own venv any way you like. Here is an example:
+1. **Create a virtual environment (recommended):** `Ogli` is distributed as a python package, so you can installed 
+directly in your machine or better, in a python virtual environment. You can create your own venv any way you like. Here is an example:
 
     ```sh
     $ python3 -m venv ./.env/ogli 
@@ -105,7 +105,8 @@ environment. You can create your own venv any way you like. Here is an example:
     $ pip install --upgrade pip
     ```
 
-2. **Install wheel pachage**: `$ pip install --upgrade ogli-0.0.1-py3-none-any.whl`
+2. **Install wheel pachage**: use the package manager [pip](https://pip.pypa.io/en/stable/) to install ogli:
+`$ pip install --upgrade ogli-0.0.1-py3-none-any.whl`
 
 3. **Configure aws-ogli:** `$ ogli configure-aws`
 
@@ -165,8 +166,8 @@ TODO
 
     > * If it is not possible to do what you want with an Ogli custom component, then you could create your own Lambda that does what you need and then integrate your flows with that Lambda.
 
-## Contributors
-TODO
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
 TODO
