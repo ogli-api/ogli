@@ -49,12 +49,11 @@
 > Ogli is a Simple, Serverless, Integration and API creation tool and framework.
 
 ## :bowtie: What is Ogli?
-
+Ogli is a "deploy first" framework. Instead of deployment being the last thing you do, with Ogli it is the first thing 
+you do. Deployment is something you are always doing, so it should be as natural as possible (not something to be feared).
 The Ogli command line interface (CLI) is used to create serverless application integration projects and APIs that run 
-in the cloud on Amazon's AWS platform. Ogli is a "deploy first" framework. Instead of deployment being the last thing 
-you do, with Ogli it is the first thing you do. Deployment is something you are always doing, so it should be as natural 
-as possible (not something to be feared).
-
+in the cloud on Amazon's AWS platform.
+ 
 ## :rocket: Getting Started
 
 ### Installation
@@ -122,29 +121,103 @@ directly in your machine or better, in a python virtual environment. You can cre
 ### :ballot_box_with_check: Usage
 
 #### Creating your first project
-TODO
+A `project` is a group of flows (workflows). A project has a property file containing name/value pairs. The properties 
+are available to all of the flows in that project. A project has one or more flows (workflows). A flow takes an input 
+does some processing on it and optionally generates an output. A project has a Main folder and a Main function. 
+When a file is created in the Main folder, it will trigger the Main function which will then process the file.
+
+Use the commands below to create your first project: `$ ogli cp project1`
+
+Here is a sample project file. It has information about all of the assets in the project and the project flows:
+
+```json
+{
+    "name": "processcsv",
+    "company": "mycompany",
+    "folders": [
+        "main",
+        "error"
+    ],
+    "functions": [
+        "main"
+    ],
+    "flows": {
+        "loadcsv": {
+            "name": "flow1",
+            "format": "delimited",
+            "folders": [
+                "start",
+                "end",
+                "error"
+            ],
+            "functions": [
+                "start"
+            ]
+        }
+    }
+}
+```
+
+Here is a sample property file.
+```json
+{
+   "property1": "one",
+   "property2": "two"
+}
+```
 
 #### Command Line Interface (CLI)
 
-A summary of commands and actions can be found in the following table:
-
-| Command | Action |
-| ------ | ------ |
-| clean | clean controller |
-| unconfigure-aws | opposite of configure-aws |
-| clean-folder | empty folder |
-| cp (create-project) | create a project |
-| TODO | TODO |
-
+A summary of commands and actions can be found [HERE](https://docs.ogli.io/untitled-1/cli).
 
 #### How to create an API
-TODO
+Video outlining the steps to create an API with Ogli: [video](https://www.youtube.com/watch?v=yI_m8xe8hCA&feature=emb_logo)
+
+
 
 #### How to create a Flow
-TODO
+Video outlining the process of creating an Ogli file flow (workflow): [video](https://www.youtube.com/watch?v=i7KFJFIn4mQ)
+
 
 ### Testing and Debugging 
-TODO
+
+#### Testing
+Here is how you test with ogli:
+
+* **To test a flow:** `$ ogli test [flow name]`
+
+* **To see what happened, what a second and then run:** `$ ogli info`
+
+* **If you see files in the main folder, then there was probably an issue. To see the main log:** `$ ogli logs main`
+
+* **To see the start log for a flow:** `$ ogli logs flow1-start`
+
+* [Integration testing](https://docs.ogli.io/integration-testing)
+
+
+#### Debuggig tips
+Here are some tips to help you debug your flows:
+
+* When you test a flow, it pushes that flow. If you are testing a flow that connects to other flows and you made changes 
+to those flows, then you need to push them.
+
+* Work with small data files until you know the flow is working correctly.  If you are working with a list of records, 
+then delete all records except for a few and see what happens.
+
+* One way to work with smaller data sets is to filter out most of the records. This example will only let records with 
+the state = 'OK' pass:
+
+    ```json
+    {
+        "component": "ogli.filter",
+        "expression": "body['state'] == 'OK'"
+    }
+     ```
+
+* You can disable a component (toggle off, skip) but adding a 'run_if' parameter and setting it to "False".  The *run_if* 
+parameter takes an expression and all expressions must be in double quotes.
+
+* When a component is disabled, the messages pass through the component untouched.
 
 ## :electric_plug: Connectors
 * **Slack:** Post body of message to slack and post exceptions to slack
@@ -158,7 +231,67 @@ TODO
 * **Jdbc:** There are currently two jdbc components: jdbc_insert and jdbc_select
 
 ## :coffee: Building a Custom Component
-TODO
+If there is not a built-in component to do the task you need done, then you can easily build your own custom component 
+using Python.
+
+In the following example, we will build a custom component that will take a flat car data and transform it into a 
+more hierarchical format.
+
+Input example:
+
+```json
+{
+    "id": "bb9db8",
+    "year": 2014,
+    "make": "BMW",
+    "model": "i8",
+    "class": "Subcompact Cars",
+    "cylinders": 3,
+    "displacement": 1.5,
+    "drive": "All-Wheel Drive",
+    "fuel_type": "Premium and Electricity",
+    "transmission": "Automatic 6-spd",
+    "mpg_highway": 29,
+    "mpg_city": 28
+}
+```
+
+Expected output:
+
+```json
+{
+    "id": "bb9db8",
+    "type": {
+        "year": 2014,
+        "make": "BMW",
+        "model": "i8",
+        "class": "Subcompact Cars"
+    },
+    "details": {
+        "engine": {
+            "cylinders": 3,
+            "displacement": 1.5
+        },
+        "transmission": {
+            "type": "Automatic 6-spd",
+            "drive": "All-Wheel Drive"
+        }
+    },
+    "fuel": {
+        "type": "Premium and Electricity",
+        "mpg": {
+            "city": 28,
+            "highway": 29
+        }
+    }
+}
+```
+ 
+See the full custom component implementation [here](custom-component.md).
+
+
+
+
 
 ## :question: FAQ
 * How do you pronounce Ogli?
@@ -178,4 +311,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 TODO
 
 ## :postbox: Contact
-TODO
+Shane Berry 
